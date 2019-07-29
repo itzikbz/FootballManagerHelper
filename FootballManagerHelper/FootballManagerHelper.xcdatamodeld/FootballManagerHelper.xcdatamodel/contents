@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18C54" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Formation" representedClassName="Formation" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="formation_detail" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FormationDetail" inverseName="formation" inverseEntity="FormationDetail" syncable="YES"/>
+    </entity>
+    <entity name="FormationDetail" representedClassName="FormationDetail" syncable="YES">
+        <attribute name="position_in_formation" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="formation" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Formation" inverseName="formation_detail" inverseEntity="Formation" syncable="YES"/>
+        <relationship name="player" maxCount="1" deletionRule="No Action" destinationEntity="Player" syncable="YES"/>
+    </entity>
+    <entity name="Player" representedClassName="Player" syncable="YES">
+        <attribute name="first_name" attributeType="String" syncable="YES"/>
+        <attribute name="last_name" attributeType="String" syncable="YES"/>
+        <attribute name="number" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="player_status" maxCount="1" deletionRule="Nullify" destinationEntity="PlayerStatus" syncable="YES"/>
+    </entity>
+    <entity name="PlayerStatus" representedClassName="PlayerStatus" syncable="YES">
+        <attribute name="is_injured" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="suspendedGames" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Formation" positionX="-54" positionY="18" width="128" height="75"/>
+        <element name="FormationDetail" positionX="-18" positionY="63" width="128" height="90"/>
+        <element name="Player" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="PlayerStatus" positionX="-36" positionY="27" width="128" height="75"/>
+    </elements>
 </model>
