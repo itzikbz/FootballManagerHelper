@@ -138,7 +138,6 @@ class PlayerManagementViewController: UIViewController {
     }
     
     
-    
     //Allows editing the viewed player
     @IBAction func editPlayerButtonAction(_ sender: Any) {
         addYellowCardButton.isEnabled = true

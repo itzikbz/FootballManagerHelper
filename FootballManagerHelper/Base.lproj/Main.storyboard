@@ -439,17 +439,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mzQ-tf-Kd4">
-                                <rect key="frame" x="0.0" y="124.5" width="414" height="542.5"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="tPE-YN-9dl">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="542.5"/>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mzQ-tf-Kd4">
+                                <rect key="frame" x="0.0" y="125" width="414" height="611"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tPE-YN-9dl">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="611"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nd4-VG-Vaw">
-                                            <rect key="frame" x="0.0" y="-0.5" width="414" height="543"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="611"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="TYp-M6-nBv">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="543"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="611"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
                                             <vibrancyEffect>
@@ -581,6 +581,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KXc-uU-hm6" firstAttribute="leading" secondItem="GMU-k3-dd3" secondAttribute="leading" id="4EY-Qa-xVN"/>
+                            <constraint firstItem="mzQ-tf-Kd4" firstAttribute="top" secondItem="y3F-5G-pi8" secondAttribute="bottom" constant="1" id="6PK-2d-fkp"/>
                             <constraint firstItem="KXc-uU-hm6" firstAttribute="top" secondItem="y3F-5G-pi8" secondAttribute="bottom" constant="2" id="GOE-Z8-enr"/>
                             <constraint firstItem="mzQ-tf-Kd4" firstAttribute="trailing" secondItem="GMU-k3-dd3" secondAttribute="trailing" id="Mmt-fB-9Tw"/>
                             <constraint firstItem="l6O-LM-XYM" firstAttribute="top" secondItem="GMU-k3-dd3" secondAttribute="top" id="ThK-zL-u6A"/>
