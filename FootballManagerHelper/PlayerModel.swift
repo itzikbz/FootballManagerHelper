@@ -8,6 +8,7 @@
 
 import Foundation
 
+//A class which represents the player model in firebase
 class PlayerModel{
     var id: String?
     var first: String?

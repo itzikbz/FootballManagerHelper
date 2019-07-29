@@ -7,6 +7,8 @@
 //
 
 import Foundation
+
+//A class which represents the formation detail model in firebase
 class FormationDetailModel{
     var id: String?
     var formationId: String?

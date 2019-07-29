@@ -92,23 +92,23 @@
 		707F40B522980A7600D096A3 /* FootballManagerHelper */ = {
 			isa = PBXGroup;
 			children = (
-				707F40B622980A7600D096A3 /* AppDelegate.swift */,
-				707F40B822980A7600D096A3 /* ViewController.swift */,
-				70FC880D229958E1002623D9 /* PlayerManagementViewController.swift */,
-				70FC880F22996F0A002623D9 /* PlayerCollectionViewCell.swift */,
 				707F40BA22980A7600D096A3 /* Main.storyboard */,
 				707F40C022980A7D00D096A3 /* Assets.xcassets */,
-				707F40C222980A7D00D096A3 /* LaunchScreen.storyboard */,
-				707F40C522980A7D00D096A3 /* Info.plist */,
+				707F40B622980A7600D096A3 /* AppDelegate.swift */,
+				707F40B822980A7600D096A3 /* ViewController.swift */,
+				7070E08922ACE2920086671E /* LoginViewController.swift */,
+				70FC880D229958E1002623D9 /* PlayerManagementViewController.swift */,
+				70FC880F22996F0A002623D9 /* PlayerCollectionViewCell.swift */,
 				7067C129229C4F5500E2E0FA /* PlayerFormationViewController.swift */,
 				7067C12B229C502500E2E0FA /* PositionCollectionViewCell.swift */,
-				7029998F22A6633500A9A47E /* GoogleService-Info.plist */,
 				70E7965122A66C3800E6F055 /* FirebaseClient.swift */,
 				70FC881122997748002623D9 /* PlayerModel.swift */,
 				70E7965522A7C61200E6F055 /* FormationModel.swift */,
 				70E7965722A7CA7600E6F055 /* FormationDetailModel.swift */,
 				7069764022AC3458001708CF /* UserModel.swift */,
-				7070E08922ACE2920086671E /* LoginViewController.swift */,
+				707F40C222980A7D00D096A3 /* LaunchScreen.storyboard */,
+				7029998F22A6633500A9A47E /* GoogleService-Info.plist */,
+				707F40C522980A7D00D096A3 /* Info.plist */,
 			);
 			path = FootballManagerHelper;
 			sourceTree = "<group>";

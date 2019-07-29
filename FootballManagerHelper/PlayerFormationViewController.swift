@@ -75,6 +75,8 @@ class PlayerFormationViewController: UIViewController {
         selectFormationView.layer.cornerRadius = 10
         deletePlayerView.layer.cornerRadius = 10
         deleteFormationView.layer.cornerRadius = 10
+        loadingDataView.layer.cornerRadius = 10
+        loadingDataView.layer.cornerRadius = 10
     }
     
     //Sets the current formation drived by the selected formation

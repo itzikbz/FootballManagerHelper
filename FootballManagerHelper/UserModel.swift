@@ -7,6 +7,8 @@
 //
 
 import Foundation
+
+//A class which represents the user model in firebase
 class UserModel{
     var id: String?
     var username: String?

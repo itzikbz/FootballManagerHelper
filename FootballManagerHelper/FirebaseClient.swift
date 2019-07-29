@@ -9,6 +9,8 @@
 import Foundation
 import FirebaseFirestore
 
+
+//A singletone class which represnt the firbase client, allows us to maniuplate database operation from every class
 class FirebaseClient {
     
     static var db: Firestore {
@@ -17,7 +19,6 @@ class FirebaseClient {
     
     private init() {
     }
-    
     
     
     static func addPlayer(firstName: String!, lastName: String!, number: Int!, completion: @escaping (PlayerModel) -> ()){
@@ -65,17 +66,17 @@ class FirebaseClient {
             } else {
                 for document in querySnapshot!.documents {
                     if id == document.documentID  {
-                    let id = document.documentID as String
-                    let firstName = document.get("first") as! String
-                    let lastName = document.get("last") as! String
-                    let number = document.get("number") as! Int
-                    let suspendedGames = document.get("suspendedGames") as! Int
-                    let yellowCards = document.get("yellowCards") as! Int
-                    let playerModel = PlayerModel(id: id, first: firstName, last: lastName, number: number, suspendedGames: suspendedGames, yellowCards: yellowCards)
-                    completion(playerModel)
+                        let id = document.documentID as String
+                        let firstName = document.get("first") as! String
+                        let lastName = document.get("last") as! String
+                        let number = document.get("number") as! Int
+                        let suspendedGames = document.get("suspendedGames") as! Int
+                        let yellowCards = document.get("yellowCards") as! Int
+                        let playerModel = PlayerModel(id: id, first: firstName, last: lastName, number: number, suspendedGames: suspendedGames, yellowCards: yellowCards)
+                        completion(playerModel)
                     }
                 }
-              
+                
             }
         }
     }
@@ -85,7 +86,7 @@ class FirebaseClient {
         deletePlayerFormationDetails(playerId: id)
         db.collection("players").document(id).delete()
     }
-
+    
     static func updatePlayer(model: PlayerModel!) {
         let player = db.collection("players").document(model.id!)
         player.updateData([
@@ -156,19 +157,10 @@ class FirebaseClient {
         }
     }
     
-    
-    
     static func deleteFormation(id: String!) {
         deleteFormationDetails(formationId: id)
         db.collection("formations").document(id).delete()
     }
-    
-    
-    
-    
-    
-    
-    
     
     
     static func getFormationDetails(formationId: String!, completion: @escaping ([FormationDetailModel]) -> ()){
@@ -205,7 +197,7 @@ class FirebaseClient {
     }
     
     static func deleteFormationDetails(id: String!){
-          db.collection("formationDetails").document(id).delete()
+        db.collection("formationDetails").document(id).delete()
     }
     
     static func deleteFormationDetails(formationId: String!){
@@ -252,7 +244,6 @@ class FirebaseClient {
         }
     }
     
-    
     static func addUser(username: String?, password: String?, playerId: String?, isAdmin: Bool){
         var ref: DocumentReference? = nil
         ref = db.collection("users").addDocument(data: [
@@ -290,7 +281,6 @@ class FirebaseClient {
     }
     
     static func getUser(playerId: String?, completion: @escaping (UserModel) -> ()) {
-        var userModel: UserModel?
         db.collection("users").whereField("playerId", isEqualTo: playerId).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -329,14 +319,5 @@ class FirebaseClient {
             "isAdmin": model.isAdmin
             ])
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
 }
