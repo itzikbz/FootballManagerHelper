@@ -25,9 +25,7 @@ class LoginViewController: UIViewController {
     func checkInput(username: String, password: String) -> Bool {
         let error = validInput(username: username, password: password)
         if nil != error {
-            let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            showAlert(message: error!)
             return false
         }
         return true
@@ -41,6 +39,12 @@ class LoginViewController: UIViewController {
         return nil
     }
     
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     //Valids the login information with the firebase client
     @IBAction func loginButtonAction(_ sender: Any) {
@@ -50,9 +54,7 @@ class LoginViewController: UIViewController {
             FirebaseClient.validUser(username: username, password: password) { (userModel: UserModel?) in
                 //if user-password combination does not exist
                 if userModel == nil {
-                    let alert = UIAlertController(title: "Error", message: "Username or Password are incorrect", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
+                    self.showAlert(message: "Username or Password are incorrect")
                 } else { //if the information is valid - sets the userdefaults and dismisses the view
                     UserDefaults.standard.set(true, forKey: "isLoggedIn")
                     UserDefaults.standard.set(username, forKey: "username")
