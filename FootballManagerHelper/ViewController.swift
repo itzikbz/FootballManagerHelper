@@ -35,15 +35,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var redCardsLabel: UILabel!
     @IBOutlet weak var isInSelectedFormationLabel: UILabel!
     
-    //Loading popupview and visual effect elements
+    //Loading popupview 
     @IBOutlet var loadingDataView: UIView!
-    @IBOutlet weak var visualEffectView: UIVisualEffectView!
-    var effect: UIVisualEffect!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //Sets data for panels and effect
-        visualEffectView.effect = nil
         loadingDataView.layer.cornerRadius = 10
         loadingDataView.layer.borderWidth = 0.5
         changePasswordView.layer.cornerRadius = 10
@@ -52,6 +49,7 @@ class ViewController: UIViewController {
         playerStatusView.layer.borderWidth = 0.5
     }
     
+    //The verification of the login information is occuring everytime they user is viewing the main screen
     override func viewDidAppear(_ animated: Bool) {
         //Checks if ths user is already logged in by getting userdefaults
         let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
@@ -95,7 +93,6 @@ class ViewController: UIViewController {
         view.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         view.alpha = 0
         UIView.animate(withDuration: 0.4) {
-            self.visualEffectView.effect = self.effect
             view.alpha = 1
             view.transform = CGAffineTransform.identity
         }
@@ -106,7 +103,6 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.3, animations: {
             view.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             view.alpha = 0
-            self.visualEffectView.effect = nil
         }) { (success:Bool) in
             view.removeFromSuperview()
         }

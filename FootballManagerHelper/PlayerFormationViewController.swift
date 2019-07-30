@@ -49,9 +49,6 @@ class PlayerFormationViewController: UIViewController {
     @IBOutlet weak var setPrimaryButton: UIButton!
     
     @IBOutlet var loadingDataView: UIView!
-    
-    @IBOutlet weak var visualEffectView: UIVisualEffectView!
-    var effect: UIVisualEffect!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +66,6 @@ class PlayerFormationViewController: UIViewController {
         playerFormationCollectionView.dataSource = self
         playerPickerView?.delegate = self
         playerPickerView?.dataSource = self
-        visualEffectView.effect = nil
         addFormationView.layer.cornerRadius = 10
         addPlayerToFormationView.layer.cornerRadius = 10
         selectFormationView.layer.cornerRadius = 10
@@ -328,7 +324,6 @@ class PlayerFormationViewController: UIViewController {
         view.alpha = 0
         
         UIView.animate(withDuration: 0.4) {
-            self.visualEffectView.effect = self.effect
             view.alpha = 1
             view.transform = CGAffineTransform.identity
         }
@@ -344,9 +339,6 @@ class PlayerFormationViewController: UIViewController {
         UIView.animate(withDuration: 0.3, animations: {
             view.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             view.alpha = 0
-            
-            self.visualEffectView.effect = nil
-            
         }) { (success:Bool) in
             view.removeFromSuperview()
         }

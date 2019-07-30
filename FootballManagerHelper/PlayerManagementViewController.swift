@@ -47,14 +47,9 @@ class PlayerManagementViewController: UIViewController {
     //Loading view
     @IBOutlet var loadingDataView: UIView!
     
-    //Effects
-    @IBOutlet weak var visualEffectView: UIVisualEffectView!
-    var effect: UIVisualEffect!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Sets data for panels and effect
-        visualEffectView.effect = nil
+        //Sets data for panels
         loadingDataView.layer.cornerRadius = 10
         newPlayerPanelView.layer.cornerRadius = 10
         playerPanelView.layer.cornerRadius = 10
@@ -294,11 +289,9 @@ class PlayerManagementViewController: UIViewController {
         view.alpha = 0
         
         UIView.animate(withDuration: 0.4) {
-            self.visualEffectView.effect = self.effect
             view.alpha = 1
             view.transform = CGAffineTransform.identity
         }
-        
     }
     
     //Animates out an existing view
@@ -311,9 +304,6 @@ class PlayerManagementViewController: UIViewController {
         UIView.animate(withDuration: 0.3, animations: {
             view.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             view.alpha = 0
-            
-            self.visualEffectView.effect = nil
-            
         }) { (success:Bool) in
             view.removeFromSuperview()
         }
